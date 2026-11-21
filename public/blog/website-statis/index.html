@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kenapa Website Statis — Catatan Sederhana</title>
+  <meta name="description" content="Perbandingan singkat website statis versus stack dengan backend dan database, dan kapan masing-masing cocok dipakai.">
+  <link rel="stylesheet" href="http://localhost:1111/style.css">
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:1111/rss.xml">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Langsung ke isi</a>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Navigasi utama">
+      <a class="site-title" href="http://localhost:1111/">Catatan Sederhana</a>
+      <div class="nav-links">
+        <a href="http://localhost:1111/">Beranda</a>
+        <a href="http://localhost:1111/blog">Arsip</a>
+        <a href="http://localhost:1111/admin">Admin</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="site-main" id="main">
+    
+<article class="article">
+  <header class="article-header">
+    <span class="kicker">
+      Artikel &middot;
+      <time datetime="2026-01-24">24 January 2026</time>
+    </span>
+    <h1>Kenapa Website Statis</h1>
+    
+    <p class="article-description">Perbandingan singkat website statis versus stack dengan backend dan database, dan kapan masing-masing cocok dipakai.</p>
+    
+  </header>
+
+  <div class="prose">
+    <p>Website statis adalah kumpulan file HTML, CSS, dan aset yang sudah jadi sebelum ada permintaan dari pengunjung. Tidak ada query database saat halaman diakses, tidak ada proses render di server pada setiap request.</p>
+<h2 id="kapan-statis-cukup">Kapan statis cukup</h2>
+<p>Website statis cocok untuk:</p>
+<ul>
+<li>Blog, dokumentasi, dan halaman marketing yang isinya jarang berubah secara real-time.</li>
+<li>Situs yang ingin dihosting murah atau bahkan gratis lewat CDN/static hosting.</li>
+<li>Proyek yang ingin menghindari ketergantungan pada database seperti PostgreSQL atau layanan seperti Supabase.</li>
+</ul>
+<h2 id="kapan-perlu-backend">Kapan perlu backend</h2>
+<p>Kalau butuh data personal per pengguna, transaksi, atau pembaruan konten yang sangat sering dari banyak penulis sekaligus secara kolaboratif real-time, static site generator biasa bukan pilihan ideal sendirian — biasanya dikombinasikan dengan API terpisah.</p>
+<p>Untuk demo ini, kombinasi Zola (generator statis) dan Sveltia CMS (editor berbasis browser dengan backend <code>test-repo</code>) cukup untuk menunjukkan alur menulis dan membaca artikel tanpa server tambahan apa pun.</p>
+
+  </div>
+
+  <footer class="article-footer">
+    <a class="text-link" href="http://localhost:1111/blog">&larr; Kembali ke arsip</a>
+  </footer>
+</article>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; 2026 Catatan Sederhana</span>
+      <a href="http://localhost:1111/admin">Content Workspace</a>
+    </div>
+  </footer>
+</body>
+</html>

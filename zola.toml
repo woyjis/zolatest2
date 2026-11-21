@@ -1,0 +1,8 @@
+base_url = "http://localhost:1111"
+title = "Catatan Sederhana"
+description = "Blog demo statis dibangun dengan Zola dan Sveltia CMS."
+default_language = "en"
+compile_sass = false
+build_search_index = true
+generate_feeds = true
+feed_filenames = ["rss.xml"]

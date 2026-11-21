@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artikel Pertama — Catatan Sederhana</title>
+  <meta name="description" content="Catatan pembuka blog ini: kenapa dibangun dengan Zola dan bagaimana isinya dikelola lewat Sveltia CMS.">
+  <link rel="stylesheet" href="http://localhost:1111/style.css">
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:1111/rss.xml">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Langsung ke isi</a>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Navigasi utama">
+      <a class="site-title" href="http://localhost:1111/">Catatan Sederhana</a>
+      <div class="nav-links">
+        <a href="http://localhost:1111/">Beranda</a>
+        <a href="http://localhost:1111/blog">Arsip</a>
+        <a href="http://localhost:1111/admin">Admin</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="site-main" id="main">
+    
+<article class="article">
+  <header class="article-header">
+    <span class="kicker">
+      Artikel &middot;
+      <time datetime="2026-01-10">10 January 2026</time>
+    </span>
+    <h1>Artikel Pertama</h1>
+    
+    <p class="article-description">Catatan pembuka blog ini: kenapa dibangun dengan Zola dan bagaimana isinya dikelola lewat Sveltia CMS.</p>
+    
+  </header>
+
+  <div class="prose">
+    <p>Ini adalah artikel pertama di blog demo ini. Situs ini dibangun dengan <a rel="external" href="https://www.getzola.org/">Zola</a>, generator situs statis yang ditulis dalam Rust, dan kontennya dikelola lewat <a rel="external" href="https://github.com/sveltia/sveltia-cms">Sveltia CMS</a> — editor rich-text berbasis browser yang bisa dijalankan tanpa server Node.js tambahan.</p>
+<h2 id="mengapa-situs-statis">Mengapa situs statis</h2>
+<p>Situs statis punya beberapa keuntungan dibanding stack dengan database dan backend:</p>
+<ul>
+<li>Tidak ada server aplikasi yang perlu dijaga uptime-nya.</li>
+<li>Setiap halaman sudah berupa HTML jadi, jadi sangat cepat disajikan.</li>
+<li>Isi kontennya disimpan sebagai file Markdown biasa yang mudah dibaca dan diaudit.</li>
+</ul>
+<h2 id="bagaimana-sveltia-cms-masuk-ke-alur-ini">Bagaimana Sveltia CMS masuk ke alur ini</h2>
+<p>Sveltia CMS memberi antarmuka editor di <code>/admin/</code> tanpa memaksa kita memasang backend seperti PostgreSQL atau Supabase. Dalam demo ini CMS memakai backend <code>test-repo</code>, yang berarti perubahan tersimpan di penyimpanan browser (local storage) saja, bukan ditulis balik ke file Markdown di repo. Ini cocok untuk mencoba-coba editor tanpa menyentuh git.</p>
+<p>Artikel berikutnya akan membahas Rust dan cara kerja situs statis ini secara teknis.</p>
+
+  </div>
+
+  <footer class="article-footer">
+    <a class="text-link" href="http://localhost:1111/blog">&larr; Kembali ke arsip</a>
+  </footer>
+</article>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; 2026 Catatan Sederhana</span>
+      <a href="http://localhost:1111/admin">Content Workspace</a>
+    </div>
+  </footer>
+</body>
+</html>

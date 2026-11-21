@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% set blog = get_section(path="blog/_index.md") %}
+{% set posts = blog.pages %}
+
+<section class="hero container">
+  <span class="kicker">Jurnal Statis</span>
+  <h1>{{ section.title }}</h1>
+  {% if section.content %}
+  <div class="lead">{{ section.content | safe }}</div>
+  {% else %}
+  <p class="lead">{{ config.description }}</p>
+  {% endif %}
+  <a class="text-link" href="{{ get_url(path="blog") }}">Lihat semua artikel &rarr;</a>
+</section>
+
+{% for page in posts %}
+{% if loop.first %}
+<section class="featured container">
+  <span class="kicker">Artikel Terbaru</span>
+  <h2 class="featured-title">
+    <a href="{{ page.permalink }}">{{ page.title }}</a>
+  </h2>
+  <p class="featured-meta">
+    <time datetime="{{ page.date }}">{{ page.date | date(format="%d %B %Y") }}</time>
+  </p>
+  {% if page.description %}
+  <p class="featured-excerpt">{{ page.description }}</p>
+  {% endif %}
+  <a class="text-link" href="{{ page.permalink }}">Baca artikel &rarr;</a>
+</section>
+{% endif %}
+{% endfor %}
+
+{% if posts | length > 1 %}
+<section class="section-page container">
+  <div class="archive-heading">
+    <span class="kicker">Arsip</span>
+    <a class="text-link" href="{{ get_url(path="blog") }}">Semua artikel &rarr;</a>
+  </div>
+  <ul class="post-list">
+    {% for page in posts %}
+    {% if not loop.first and loop.index <= 4 %}
+    <li class="post-item">
+      <div class="post-date">
+        <time datetime="{{ page.date }}">{{ page.date | date(format="%d %b %Y") }}</time>
+      </div>
+      <div>
+        <a class="post-item-title" href="{{ page.permalink }}">{{ page.title }}</a>
+        {% if page.description %}
+        <p class="post-excerpt">{{ page.description }}</p>
+        {% endif %}
+      </div>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Catatan Sederhana</title>
+      <link>http://localhost:1111</link>
+      <description>Blog demo statis dibangun dengan Zola dan Sveltia CMS.</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="http://localhost:1111/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Sat, 24 Jan 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Kenapa Website Statis</title>
+          <pubDate>Sat, 24 Jan 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>http://localhost:1111/blog/website-statis/</link>
+          <guid>http://localhost:1111/blog/website-statis/</guid>
+          <description xml:base="http://localhost:1111/blog/website-statis/">&lt;p&gt;Website statis adalah kumpulan file HTML, CSS, dan aset yang sudah jadi sebelum ada permintaan dari pengunjung. Tidak ada query database saat halaman diakses, tidak ada proses render di server pada setiap request.&lt;/p&gt;
+&lt;h2 id=&quot;kapan-statis-cukup&quot;&gt;Kapan statis cukup&lt;/h2&gt;
+&lt;p&gt;Website statis cocok untuk:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Blog, dokumentasi, dan halaman marketing yang isinya jarang berubah secara real-time.&lt;/li&gt;
+&lt;li&gt;Situs yang ingin dihosting murah atau bahkan gratis lewat CDN/static hosting.&lt;/li&gt;
+&lt;li&gt;Proyek yang ingin menghindari ketergantungan pada database seperti PostgreSQL atau layanan seperti Supabase.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;kapan-perlu-backend&quot;&gt;Kapan perlu backend&lt;/h2&gt;
+&lt;p&gt;Kalau butuh data personal per pengguna, transaksi, atau pembaruan konten yang sangat sering dari banyak penulis sekaligus secara kolaboratif real-time, static site generator biasa bukan pilihan ideal sendirian — biasanya dikombinasikan dengan API terpisah.&lt;/p&gt;
+&lt;p&gt;Untuk demo ini, kombinasi Zola (generator statis) dan Sveltia CMS (editor berbasis browser dengan backend &lt;code&gt;test-repo&lt;/code&gt;) cukup untuk menunjukkan alur menulis dan membaca artikel tanpa server tambahan apa pun.&lt;/p&gt;
+</description>
+      </item>
+      <item>
+          <title>Belajar Rust Lewat Zola</title>
+          <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>http://localhost:1111/blog/belajar-rust/</link>
+          <guid>http://localhost:1111/blog/belajar-rust/</guid>
+          <description xml:base="http://localhost:1111/blog/belajar-rust/">&lt;p&gt;Zola sendiri ditulis dalam &lt;a rel=&quot;external&quot; href=&quot;https://www.rust-lang.org/&quot;&gt;Rust&lt;/a&gt; dan dibagikan sebagai satu binary tunggal. Tidak ada runtime Node.js, tidak ada dependency manager yang perlu disetup — cukup unduh satu file dan jalankan.&lt;/p&gt;
+&lt;h2 id=&quot;kenapa-ini-relevan-buat-blog-ini&quot;&gt;Kenapa ini relevan buat blog ini&lt;/h2&gt;
+&lt;p&gt;Karena Zola adalah binary tunggal:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;zola build&lt;/code&gt; menghasilkan folder &lt;code&gt;public/&lt;/code&gt; berisi HTML statis murni.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zola serve&lt;/code&gt; menjalankan server pratinjau lokal dengan live reload.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zola check&lt;/code&gt; memverifikasi semua link internal dan konten valid tanpa benar-benar membangun output.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;templating-dengan-tera&quot;&gt;Templating dengan Tera&lt;/h2&gt;
+&lt;p&gt;Zola memakai &lt;a rel=&quot;external&quot; href=&quot;https://keats.github.io/tera/&quot;&gt;Tera&lt;/a&gt;, mesin template mirip Jinja2, untuk file-file di folder &lt;code&gt;templates/&lt;/code&gt;. Template &lt;code&gt;base.html&lt;/code&gt; menjadi kerangka dasar, lalu &lt;code&gt;index.html&lt;/code&gt;, &lt;code&gt;section.html&lt;/code&gt;, dan &lt;code&gt;page.html&lt;/code&gt; saling &lt;code&gt;extends&lt;/code&gt; dari situ.&lt;/p&gt;
+&lt;p&gt;Kombinasi Rust + Tera inilah yang membuat Zola cepat dibangun dan cepat disajikan, cocok untuk demo blog sederhana seperti ini.&lt;/p&gt;
+</description>
+      </item>
+      <item>
+          <title>Artikel Pertama</title>
+          <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>http://localhost:1111/blog/artikel-pertama/</link>
+          <guid>http://localhost:1111/blog/artikel-pertama/</guid>
+          <description xml:base="http://localhost:1111/blog/artikel-pertama/">&lt;p&gt;Ini adalah artikel pertama di blog demo ini. Situs ini dibangun dengan &lt;a rel=&quot;external&quot; href=&quot;https://www.getzola.org/&quot;&gt;Zola&lt;/a&gt;, generator situs statis yang ditulis dalam Rust, dan kontennya dikelola lewat &lt;a rel=&quot;external&quot; href=&quot;https://github.com/sveltia/sveltia-cms&quot;&gt;Sveltia CMS&lt;/a&gt; — editor rich-text berbasis browser yang bisa dijalankan tanpa server Node.js tambahan.&lt;/p&gt;
+&lt;h2 id=&quot;mengapa-situs-statis&quot;&gt;Mengapa situs statis&lt;/h2&gt;
+&lt;p&gt;Situs statis punya beberapa keuntungan dibanding stack dengan database dan backend:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tidak ada server aplikasi yang perlu dijaga uptime-nya.&lt;/li&gt;
+&lt;li&gt;Setiap halaman sudah berupa HTML jadi, jadi sangat cepat disajikan.&lt;/li&gt;
+&lt;li&gt;Isi kontennya disimpan sebagai file Markdown biasa yang mudah dibaca dan diaudit.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;bagaimana-sveltia-cms-masuk-ke-alur-ini&quot;&gt;Bagaimana Sveltia CMS masuk ke alur ini&lt;/h2&gt;
+&lt;p&gt;Sveltia CMS memberi antarmuka editor di &lt;code&gt;/admin/&lt;/code&gt; tanpa memaksa kita memasang backend seperti PostgreSQL atau Supabase. Dalam demo ini CMS memakai backend &lt;code&gt;test-repo&lt;/code&gt;, yang berarti perubahan tersimpan di penyimpanan browser (local storage) saja, bukan ditulis balik ke file Markdown di repo. Ini cocok untuk mencoba-coba editor tanpa menyentuh git.&lt;/p&gt;
+&lt;p&gt;Artikel berikutnya akan membahas Rust dan cara kerja situs statis ini secara teknis.&lt;/p&gt;
+</description>
+      </item>
+    </channel>
+</rss>

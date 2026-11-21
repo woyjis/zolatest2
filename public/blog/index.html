@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Catatan Sederhana</title>
+  <meta name="description" content="Blog demo statis dibangun dengan Zola dan Sveltia CMS.">
+  <link rel="stylesheet" href="http://localhost:1111/style.css">
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:1111/rss.xml">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Langsung ke isi</a>
+
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Navigasi utama">
+      <a class="site-title" href="http://localhost:1111/">Catatan Sederhana</a>
+      <div class="nav-links">
+        <a href="http://localhost:1111/">Beranda</a>
+        <a href="http://localhost:1111/blog">Arsip</a>
+        <a href="http://localhost:1111/admin">Admin</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="site-main" id="main">
+    
+<section class="section-page container">
+  <span class="kicker">Arsip</span>
+  <h1>Blog</h1>
+
+  <ul class="post-list">
+    
+    <li class="post-item">
+      <div class="post-date">
+        <time datetime="2026-01-24">24 Jan 2026</time>
+      </div>
+      <div>
+        <a class="post-item-title" href="http://localhost:1111/blog/website-statis/">Kenapa Website Statis</a>
+        
+        <p class="post-excerpt">Perbandingan singkat website statis versus stack dengan backend dan database, dan kapan masing-masing cocok dipakai.</p>
+        
+      </div>
+    </li>
+    
+    <li class="post-item">
+      <div class="post-date">
+        <time datetime="2026-01-17">17 Jan 2026</time>
+      </div>
+      <div>
+        <a class="post-item-title" href="http://localhost:1111/blog/belajar-rust/">Belajar Rust Lewat Zola</a>
+        
+        <p class="post-excerpt">Zola ditulis dalam Rust dan dibagikan sebagai satu binary — ini kenapa itu penting untuk demo situs statis ini.</p>
+        
+      </div>
+    </li>
+    
+    <li class="post-item">
+      <div class="post-date">
+        <time datetime="2026-01-10">10 Jan 2026</time>
+      </div>
+      <div>
+        <a class="post-item-title" href="http://localhost:1111/blog/artikel-pertama/">Artikel Pertama</a>
+        
+        <p class="post-excerpt">Catatan pembuka blog ini: kenapa dibangun dengan Zola dan bagaimana isinya dikelola lewat Sveltia CMS.</p>
+        
+      </div>
+    </li>
+    
+  </ul>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; 2026 Catatan Sederhana</span>
+      <a href="http://localhost:1111/admin">Content Workspace</a>
+    </div>
+  </footer>
+</body>
+</html>

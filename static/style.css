@@ -1,0 +1,507 @@
+/* ==========================================================================
+   Design tokens
+   ========================================================================== */
+
+:root {
+  --color-paper: #faf8f4;
+  --color-paper-dim: #f1eee6;
+  --color-ink: #16140f;
+  --color-ink-soft: #5a5649;
+  --color-ink-faint: #8c8777;
+  --color-line: #ddd7c7;
+  --color-accent: #b0431d;
+  --color-accent-ink: #7c2f14;
+  --color-focus: #b0431d;
+
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Georgia", serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", "Segoe UI Mono", Menlo, Consolas, monospace;
+
+  --container: 1080px;
+  --measure: 70ch;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.75rem;
+  --space-4: 2.75rem;
+  --space-5: 4.5rem;
+  --space-6: 7rem;
+
+  --border-thin: 1px solid var(--color-line);
+}
+
+/* ==========================================================================
+   Reset & base
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.skip-link:focus-visible {
+  left: var(--space-2);
+  top: var(--space-2);
+}
+
+.kicker {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent-ink);
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+/* ==========================================================================
+   Header / nav
+   ========================================================================== */
+
+.site-header {
+  border-bottom: var(--border-thin);
+  background: var(--color-paper);
+}
+
+.site-nav {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: var(--space-2) var(--space-3);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.site-title {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.nav-links a {
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-accent-ink);
+  border-bottom-color: var(--color-accent);
+}
+
+.nav-links a[aria-current="page"] {
+  color: var(--color-ink);
+  border-bottom-color: var(--color-ink);
+}
+
+/* ==========================================================================
+   Main / footer
+   ========================================================================== */
+
+.site-main {
+  min-height: 60vh;
+}
+
+.site-footer {
+  border-top: var(--border-thin);
+  margin-top: var(--space-6);
+}
+
+.site-footer .container {
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-4);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-ink-faint);
+}
+
+.site-footer a {
+  color: var(--color-ink-faint);
+  text-decoration: underline;
+  text-decoration-color: var(--color-line);
+}
+
+.site-footer a:hover {
+  color: var(--color-accent-ink);
+  text-decoration-color: var(--color-accent);
+}
+
+/* ==========================================================================
+   Hero (homepage)
+   ========================================================================== */
+
+.hero {
+  padding: var(--space-5) 0 var(--space-4);
+  border-bottom: var(--border-thin);
+}
+
+.hero .kicker {
+  margin-bottom: var(--space-2);
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  margin: 0 0 var(--space-3);
+  max-width: 18ch;
+}
+
+.hero .lead {
+  font-size: 1.1875rem;
+  color: var(--color-ink-soft);
+  max-width: var(--measure);
+  margin: 0 0 var(--space-3);
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--color-accent-ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-accent);
+  padding-bottom: 2px;
+  transition: gap 0.15s ease, color 0.15s ease;
+}
+
+.text-link:hover {
+  gap: 0.65em;
+  color: var(--color-ink);
+}
+
+/* ==========================================================================
+   Featured article
+   ========================================================================== */
+
+.featured {
+  padding: var(--space-4) 0;
+  border-bottom: var(--border-thin);
+}
+
+.featured .kicker {
+  margin-bottom: var(--space-2);
+}
+
+.featured-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  line-height: 1.2;
+  margin: 0 0 var(--space-1);
+}
+
+.featured-title a {
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.featured-title a:hover {
+  color: var(--color-accent-ink);
+}
+
+.featured-meta {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-ink-faint);
+  margin: 0 0 var(--space-2);
+}
+
+.featured-excerpt {
+  color: var(--color-ink-soft);
+  max-width: var(--measure);
+  margin: 0 0 var(--space-2);
+}
+
+/* ==========================================================================
+   Post list (archive)
+   ========================================================================== */
+
+.section-page {
+  padding: var(--space-4) 0 var(--space-5);
+}
+
+.section-page > .kicker {
+  margin-bottom: var(--space-2);
+}
+
+.section-page h1 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin: 0 0 var(--space-4);
+}
+
+.archive-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-1);
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-item {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-bottom: var(--border-thin);
+}
+
+.post-item:first-child {
+  border-top: var(--border-thin);
+}
+
+.post-date {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-ink-faint);
+  padding-top: 0.2rem;
+}
+
+.post-item-title {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  font-weight: 500;
+  color: var(--color-ink);
+  text-decoration: none;
+  margin: 0 0 0.35rem;
+}
+
+.post-item-title:hover {
+  color: var(--color-accent-ink);
+}
+
+.post-excerpt {
+  color: var(--color-ink-soft);
+  margin: 0;
+  max-width: var(--measure);
+}
+
+/* ==========================================================================
+   Article page
+   ========================================================================== */
+
+.article {
+  padding: var(--space-4) 0 var(--space-5);
+  max-width: var(--measure);
+  margin: 0 auto;
+}
+
+.article-header {
+  margin-bottom: var(--space-4);
+}
+
+.article-header .kicker {
+  margin-bottom: var(--space-2);
+}
+
+.article-header h1 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(2rem, 4.5vw, 2.875rem);
+  line-height: 1.15;
+  margin: 0 0 var(--space-2);
+}
+
+.article-description {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--color-ink-soft);
+  margin: 0;
+}
+
+.prose p,
+.prose ul,
+.prose ol {
+  margin: 0 0 var(--space-2);
+}
+
+.prose h2 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin: var(--space-4) 0 var(--space-2);
+}
+
+.prose a {
+  color: var(--color-accent-ink);
+  text-decoration-color: var(--color-accent);
+}
+
+.prose a:hover {
+  color: var(--color-ink);
+}
+
+.prose code {
+  background: var(--color-paper-dim);
+  padding: 0.15rem 0.4rem;
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+}
+
+.article-footer {
+  margin-top: var(--space-5);
+  padding-top: var(--space-3);
+  border-top: var(--border-thin);
+}
+
+.article-footer .text-link {
+  border-bottom-color: transparent;
+}
+
+.article-footer .text-link:hover {
+  border-bottom-color: var(--color-accent);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  .container,
+  .site-nav,
+  .site-footer .container {
+    padding-left: var(--space-2);
+    padding-right: var(--space-2);
+  }
+
+  .post-item {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+
+  .post-date {
+    padding-top: 0;
+  }
+
+  .hero {
+    padding: var(--space-4) 0 var(--space-3);
+  }
+
+  .nav-links {
+    gap: var(--space-2);
+  }
+}
+
+/* ==========================================================================
+   Admin entry splash (static/admin/index.html, shown before CMS mounts)
+   ========================================================================== */
+
+.admin-splash {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  text-align: center;
+  padding: var(--space-3);
+}
+
+.admin-splash-mark {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent-ink);
+  border: 1px solid var(--color-accent);
+  padding: 0.3rem 0.7rem;
+  margin-bottom: var(--space-2);
+}
+
+.admin-splash-title {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+.admin-splash-sub {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-ink-faint);
+  margin: 0;
+}
+
+.admin-splash-back {
+  margin-top: var(--space-3);
+}
